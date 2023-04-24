@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CheckBoxQuestion extends Question {
-
-    public CheckBoxQuestion(String question, ArrayList answers) {
-        super(question, answers);
+    public CheckBoxQuestion(String question, Choice[] choiceArray) {
+        super(question, choiceArray);
     }
 
     @Override
-    public Boolean gradeAnswers(ArrayList<String> expectedAnswer, ArrayList<String> actualAnswer) {
-        return null;
+    public String toString() {
+        return "\nCheck one or more:\n"+
+                super.getQuestion() + "\n" +
+                super.getFormattedChoices();
     }
 
 }
